@@ -1,0 +1,918 @@
+
+
+	Good Morning All
+
+	Welcome to Python Training - Day1 Session 
+		  =================
+
+ 	This is Theeba - Trainer. 
+	
+	We will start session @ 9:30 AM IST
+	-------------------------------------------
+
+	
+
+Install Python
+
+Open Python Shell---> 
+1. cmd prompt
+2. Python Shell
+3. IDE
+
+Test-> installed or Not? 3.x
+
+cmd prompt
+|
+Python -V  (or) Python --version         Windows User
+
+Python 2.x -->Linux/mac User
+
+Python -V (or) Python --version   --> 2.x
+
+Python3 -V (or) Python3 --version  -> 3.x
+==========================================================
+
+3 styles of Python
+--------------------
+1. Procedural style -> data structures; logical ; syntax -->
+
+2. Object oriented style --> class --> object 
+
+3. functional style ---> single line code  - ML;DL
+
+-------------------------
+def display(a):
+	return a+100
+
+L=[]				VS   [var+100 for var in range(5)]---> [100,200,300,400,500]
+for var in range(5): 
+	r=display(var);
+	L.apppend(r)
+
+--------------------------
+L=[100,200,300,400,500] -> list creation
+
+
+1. Procedural style
+===================
+
+Number-> int, float, complex
+
+Text->String, bytes
+
+bool, NoneType-> None
+
+collection of values-> list,tuple,dict,set
+
+Shellscript          VS           Python
+------------			---------
+
+command based language		function;class;object
+
+echo "Hello"			print("Hello")
+|				|
+cmd				function
+
+date +%D                        import os
+				os.system("date +%D")
+echo "Today `date +%D`"
+
+myhost=`hostname`		
+
+=================================================================
+
+C/C++			VS             Python
+------					------
+
+int a=10;				a=10
+a="Hello";//Error                      a="Hello"
+
+gcc p1.c -o p1				python p1.py (or) python3 p1.py
+./p1
+
+======================================================================
+Python shell
+============
+python3 <Enter>  -> Linux/mac      vi filename.py
+				   ..
+				   :wq
+
+				   chmod a+x filename.py
+				
+
+python <Enter>   -> Windows
+
+
+String --> '..'     (or)   " .. "  Singleline string literal
+
+       --> """...."""   (or) '''......'''   Multiline string literal  (or) Multiline comment
+
+rv="""...""""   ->str literal
+print("""..""")     -> str literal
+
+"""...…"""    -> Multiline comment
+#              -> Single line comment
+
+int  float  complex  string 	bytes    bool 		NoneType ==> Types/Class
+
+10    10.09   10+2J   'kd$% 1'  b'abc'   True/False      None  ==> Values (or) Objects
+                      "jss6& "
+
+
+=============================================================================================
+New to programming
+------------------
+1. Learn the concept -> What is ..?
+2. Learn the Syntax  -> Rule
+3. see some examples
+4. try some Exercise
+===================================================================
+
+Variables
+---------
+
+- namespace -> to hold values
+
+Syntax:-
+
+variablename=value
+------------
+|
+userdefined
+
+fname='/etc/passwd'
+
+index=12334
+
+cost=2213.21
+
+v1=10
+
+Rule
+====
+variablename--> start with A_Z a-z _ - not start with digits
+       |------> not contain space; special char
+
+FNAME="p1.java"
+fname="p2.java"
+Fname="p3.java"
+
+Task
+===
+create a python code for filesystem details
+
+xfs
+/D1
+/dev/sda1
+129GB
+step 1:create variables to hold above values 
+step 2:use print statement to display the values
+
+------------------------------------------------------------------------
+
+user defined str + variable 
+----------------------------
+1. comma 
+ print("cost value is ", cost)  -> single space
+
+2. C style -> int -> %d   float-> %f  string -> %s
+
+"user defined str %d %f %s"%(namedvariable) 
+
+3. pythons oop style-> format method--> str class
+
+str obj -> obj.format()
+				
+".{}..{}.".format(namedvar)
+
+3a. enhanced format method
+
+f".{var1}…{var2}"
+==================================================
+To determine Type of var?
+
+type(10)-> int
+type(cost)-> float
+
+===================================
+Task
+===
+create a python code for filesystem details
+
+xfs
+/D1
+/dev/sda1
+129GB
+step 1:create variables to hold above values 
+step 2:use print statement to display the values with user defined str
+       (or)
+      single print stmt
+==========================================================
+>>> exit()  - Terminates the python subshell
+
+p1.py
+=====
+..
+…
+
+
+cmd prompt-> python p1.py   (or) python3 p1.py
+===========================================================
+
+========================================================================================
+
+Typecasting
+------------
+str-> int
+str-> float
+int-> float
+int-> str
+
+float-> int
+float->str
+ex:
+str-> int->  target type is int   -> int(inputfloat)-> int 
+----------------------------------------------------------
+>>> var='10'
+>>> type(var)
+<class 'str'>
+>>> cost="123.444"
+>>> type(cost)
+<class 'str'>
+>>> a=10
+>>> type(a)
+<class 'int'>
+>>> float(a)
+10.0
+>>> str(a)
+'10'
+>>> type(str(a))
+<class 'str'>
+>>> var="12GB"
+>>> float(var)
+Traceback (most recent call last):
+  File "<python-input-11>", line 1, in <module>
+    float(var)
+    ~~~~~^^^^^
+ValueError: could not convert string to float: '12GB'
+>>> var1="124"
+>>> type(var1)
+<class 'str'>
+>>> float(var1)
+124.0
+>>> int(var1)
+124
+--------------------------------------------------------
+
+fname="xfs"    vs     fname=input(prompt)
+
+
+Operators
+---------
+
++ - * / // % **
+      |  |
+      |  integer division
+      floating point division
+---------------------------------> (int/float)--> int/float
+
+string
+------
++  *     (str,int)---> str
+|  |
+|  |---------------> str repeatation
+str concatenation
+
+===========================================================
+
+Task
+====
+Create a python program
+
+step 1: Read the empname,emdid, empcost from <STDIN>
+step 2: calculate 20% of cost hike
+step 3: display the empname, empid and new cost to <STDOUT>
+
+-------------------------------------------------------------
+
+Predict output
+--------------
+1. v1=10
+print("A"+str(v1))  #A10
+
+2. v2=1.543
+type(str(v2))   #<class 'str'>
+
+3. "100" + "600"  #100600
+
+4. type(int("100") + float("500"))   #<class float>
+
+5.type(input(''))  <class 'str'>
+
+---------------------------------------------------------------
+
+expression
+----------
+1. infix   ->  a+b    a-b  <operand1>operator<operand2>   -> Python Supports
+
+2. prefix  -> ++a  --a ## python Not support
+
+3. postfix  -> a++  b-- # python Not support
+
+
+relational operators (int,float,str)--> bool(True/ False)
+------------------------------------------------------------
+==  !=  <  <=  > >= 
+# in shellscript   -eq -ne -lt -gt ge -le
+
+
+port 500-600
+
+port>500   -> 1
+port< 600  -> 2
+
+logical operator (int,float,str)-> bool(True/False)
+---------------------------------------------------
+and or not
+
+==============================================================================================
+
+Conditional statements
+----------------------
+-> test 1 or more conditions--> based on that condition, execute statement only once.
+
+
+test app name is app1  or app2  
+
+
+if(condition):
+	true block
+else:
+	false block
+
+Task
+====
+step1: read a login username            False
+step 2: test login name is root or not-----display "Login Failed"
+           |
+           | True
+          display "Login Success"
+
+================================================
+Syntax Error
+NameError
+ValueError
+IdentationError
+
+================================================
+Nested 
+======
+if condition1:
+	true block
+	if condition2:
+		trueblock2
+		if condition3:
+			trueblock3
+		else:
+			falseblock3
+	else:
+		false block2
+else:
+	false block
+
+Task
+====
+step1: read a login username            False
+step 2: test login name is root or not-----display "Login Failed"
+           |
+           | True
+           read shellname
+	   test shellname is sh or bash----- display "shell name Not matched"
+	    |
+	    display username and shell name.
+                
+===================================================================
+
+membership operator 
+------------------
+in         notin
+
+'s'   in  "stat"  -> True
+'s'   not in 'stat"  -> False
+
+Syntax:- element in collection
+
+
+=========================  Activity Time  2:15PM to 2:45PM  ===========================
+
+
+		python_Activity1.pdf  (  Question 1 to Question 11 )
+========================================================================================
+
+type()
+help()
+len()--> count of no. of elements in collection 
+
+len("hello")----> 5 
+
+
+=========================================================================================
+3) if..elif...else
+- Testing more than 1 condition
+
+if(condition1):
+	true stmt1
+elif(condition2):
+	true stmt2
+elif(condition3):
+	true stmt3
+..
+else:
+	false stmt
+
+============================================================================================
+
+Looping statement
+=================
+
+ -> executes code block more than once
+
+ -> 1.  condition Style looping   -  while  - based on condition
+ -> 2.  collection Style Looping   - for    - based on no. of elements 
+
+
+1.  condition Style looping  
+---------------------------
+initialization
+while condition:
+	code block
+	counter increment/decrement
+
+------------------------------------------------------------------------------------------
+
+>>>
+>>> i=0
+>>> if i<5:
+...     print("Hello..{}".format(i))
+...     i=i+1
+...
+Hello..0
+>>>
+>>> while i<5:
+...     print("Hello..{}".format(i))
+...     i=i+1
+...
+Hello..1
+Hello..2
+Hello..3
+Hello..4
+>>> i=0
+>>> while i<5:
+...     print("Hello..{}".format(i))
+...     i=i+1
+...
+Hello..0
+Hello..1
+Hello..2
+Hello..3
+Hello..4
+>>> while False:
+...     print("Hello")
+... else:
+...     print("Thank you")
+...
+Thank you
+>>> i=0
+>>> while i<5:
+...     print("Hello..{}".format(i))
+...     i=i+1
+... else:
+...     print("-"*50)
+...     print("Thank You !!")
+...     print("-"*50)
+...
+Hello..0
+Hello..1
+Hello..2
+Hello..3
+Hello..4
+--------------------------------------------------
+Thank You !!
+--------------------------------------------------
+
+-------------------------------------------------------------------------------------------------
+Task
+====
+Python_Activity1.pdf      Question 14
+
+
+-------------------------------------------------------------------------------------------------
+
+Termination from Loop - while  - for
+
+break - exit from loop  
+continue - skip remaining part of current iteration and execute from next iteration
+==============================================================================================
+
+i=0
+while i<3:
+	print("DATA ", i)
+	i+=1
+======================
+
+DATA 0
+DATA 1
+DATA 2
+
+-----------------------
+i=0
+while i<3:
+	print("DATA ", i)
+	if(i==1)
+	 	break
+	print("Inside Loop")
+	i+=1
+
+print("Outside Loop")
+============================
+
+DATA 0
+Inside Loop
+DATA 1
+Outside Loop
+--------------------------------
+i=0
+while i<3:
+	print("DATA ", i)
+	if(i==1)
+	 	continue
+	print("Inside Loop")
+	i+=1
+
+print("Outside Loop")
+==============================
+
+DATA 0
+Inside Loop
+DATA 1
+DATA 2
+====================================================================
+
+2. Collection style Loop
+--------------------------
+-for
+- code executed more than 1 based on no. of elements in collection
+
+Syntax:-
+-------
+
+for ( element in collection ):
+	code 
+else:
+	..
+
+===========================================================================================================
+
+>>> var='123456789'
+>>>
+>>> for v in var:
+...     print(var,type(v))
+... else:
+...     print("Thankyou")
+...
+123456789 <class 'str'>
+123456789 <class 'str'>
+123456789 <class 'str'>
+123456789 <class 'str'>
+123456789 <class 'str'>
+123456789 <class 'str'>
+123456789 <class 'str'>
+123456789 <class 'str'>
+123456789 <class 'str'>
+Thankyou
+>>> for v in var:
+...     print(v,type(v))
+... else:
+...     print("Thankyou")
+...
+1 <class 'str'>
+2 <class 'str'>
+3 <class 'str'>
+4 <class 'str'>
+5 <class 'str'>
+6 <class 'str'>
+7 <class 'str'>
+8 <class 'str'>
+9 <class 'str'>
+Thankyou
+>>>
+>>> t=0
+>>> for v in var:
+...     t=t+int(v)
+... else:
+...     print("Sum of {} string is {} ".format(var,t))
+...
+Sum of 123456789 string is 45
+>>> var="2232131gb"
+>>> t=0
+>>> for v in var:
+...     t=t+int(v)
+... else:
+...     print("Sum of {} string is {} ".format(var,t))
+...
+Traceback (most recent call last):
+  File "<python-input-98>", line 2, in <module>
+    t=t+int(v)
+        ~~~^^^
+ValueError: invalid literal for int() with base 10: 'g'
+===========================================================================================================
+s='abcd'     
+- immutable 
+- collection of character
+- ordered 
+- fetch any character---> index
+
+How to fetch single character?
+------------------------------
+s='abcd' 
+
+| s |---->   | a | b | c | d |
+   		0  1   2   3       positive indexing
+	       -4  -3 -2   -1		   Negative "	
+
+len(s)--> no. of characters => 4
+
+s[len(s)-1]  ==> elmt pointed by index 3==> 'd'
+s[-1]     =>     "             "       -1 ==> 'd'
+
+s[0]==> 'a'
+s[1]==> 'b'
+s[2]==> 'c'
+
+How to fetch substring from str?
+-------------------------------
+- slicing
+
+stringname[n:m]  slice str from n to (m-1) index
+           |   
+          start index
+
+Pre- defined method
+====================
+
+help(str)
+
+"".upper()
+"".lower()
+"".title()
+----------------------------> str
+"".isupper() -> bool
+
+==============================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
