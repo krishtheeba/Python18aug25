@@ -1,0 +1,1384 @@
+Variable
+operators
+conditional statements
+Looping statement
+
+int, float, str, bool --> Scalar
+----------------------------------------------------------------------
+
+
+List
+Tuple
+File Handling - str,list
+Set
+Dict
+
+------------------------------------------------------------------------
+import array->
+
+List
+====
+ - collection of elements   
+    -------------------
+     different type
+
+ - ordered structure - index based access
+
+ - positive index, negative index
+
+ - slicing operation
+
+ - mutable structure
+
+ - allows duplicates
+
+recap : str- immutable structure - collection of chars - index -> indexing, slicing
+
+
+L= []  # empty list
+
+========================================================================================================
+
+.
+
+L=[]
+type(L)
+<class 'list'>
+
+a=100
+b=1.22
+c='data'
+d=True
+
+L=[a,b,c,d]
+
+type(L)
+<class 'list'>
+L
+[100, 1.22, 'data', True]
+print(type(a), type(b), type(c), type(d))
+<class 'int'> <class 'float'> <class 'str'> <class 'bool'>
+
+L=['d1','d2','d3','d4','d5',10,20,30,3.4,True]
+L
+['d1', 'd2', 'd3', 'd4', 'd5', 10, 20, 30, 3.4, True]
+# 0     1      2     3     4    5   6  7    8     9
+# How to fetch single element from a List
+# Listname[Index]
+s="abcd"
+s[0]
+'a'
+L[0]
+'d1'
+L[1]
+'d2'
+L[3]
+'d4'
+s[-1]
+'d'
+L[-1]
+True
+L[9]
+True
+
+for var in s:
+    print(var)
+
+    
+a
+b
+c
+d
+for var in L:
+    print(var)
+
+    
+d1
+d2
+d3
+d4
+d5
+10
+20
+30
+3.4
+True
+L
+['d1', 'd2', 'd3', 'd4', 'd5', 10, 20, 30, 3.4, True]
+
+i=0
+while i< len(s):
+    print(s[i])
+    i+=1
+
+    
+a
+b
+c
+d
+for var in s:
+    print(var)
+
+    
+a
+b
+c
+d
+
+len(L)
+10
+L
+['d1', 'd2', 'd3', 'd4', 'd5', 10, 20, 30, 3.4, True]
+
+for var in L:
+    print(var)
+
+    
+d1
+d2
+d3
+d4
+d5
+10
+20
+30
+3.4
+True
+i=0
+while i< len(L):
+    print(L[i])
+    i+=1
+
+    
+d1
+d2
+d3
+d4
+d5
+10
+20
+30
+3.4
+True
+L
+['d1', 'd2', 'd3', 'd4', 'd5', 10, 20, 30, 3.4, True]
+# Listname[n:m] -> from nth index to (m-1) index
+
+L[2:6]   # from 2nd index to 5th index (6-1)
+['d3', 'd4', 'd5', 10]
+L[-3:]
+[30, 3.4, True]
+L[:-3]
+['d1', 'd2', 'd3', 'd4', 'd5', 10, 20]
+# 0th index to (-3-1) = -4 index
+
+s="welcome"
+len(s)
+7
+s[1]
+'e'
+s[1]="X"
+Traceback (most recent call last):
+  File "<pyshell#68>", line 1, in <module>
+    s[1]="X"
+TypeError: 'str' object does not support item assignment
+L
+['d1', 'd2', 'd3', 'd4', 'd5', 10, 20, 30, 3.4, True]
+L[1]
+'d2'
+L[1]="X"
+L
+['d1', 'X', 'd3', 'd4', 'd5', 10, 20, 30, 3.4, True]
+
+s[6]
+'e'
+s[10]
+Traceback (most recent call last):
+  File "<pyshell#75>", line 1, in <module>
+    s[10]
+IndexError: string index out of range
+L[9]
+True
+L[15]
+Traceback (most recent call last):
+  File "<pyshell#77>", line 1, in <module>
+    L[15]
+IndexError: list index out of range
+l[9]
+Traceback (most recent call last):
+  File "<pyshell#78>", line 1, in <module>
+    l[9]
+NameError: name 'l' is not defined. Did you mean: 'L'?
+contents=['d1\n', 'd2\n', 'd3\n', 'd4\n', 'd5\n','d6\n','d7\n']
+
+len(contents)
+7
+contents[-3:]
+['d5\n', 'd6\n', 'd7\n']
+contents[:-3]
+['d1\n', 'd2\n', 'd3\n', 'd4\n']
+contents[:3]
+['d1\n', 'd2\n', 'd3\n']
+contents[3:]
+['d4\n', 'd5\n', 'd6\n', 'd7\n']
+
+type(contents)
+<class 'list'>
+type(contents[0])
+<class 'str'>
+contents[0]
+'d1\n'
+contents[0].strip()
+'d1'
+for var in contents:
+    print(var)
+
+    
+d1
+
+d2
+
+d3
+
+d4
+
+d5
+
+d6
+
+d7
+
+for var in L:
+    print(var)
+
+    
+d1
+X
+d3
+d4
+d5
+10
+20
+30
+3.4
+True
+for var in contents:
+    print(var.strip())
+
+    
+d1
+d2
+d3
+d4
+d5
+d6
+d7
+100.strip()
+SyntaxError: invalid decimal literal
+
+help(list)  # help([])
+Help on class list in module builtins:
+
+class list(object)
+ |  list(iterable=(), /)
+ |
+ |  Built-in mutable sequence.
+ |
+ |  If no argument is given, the constructor creates a new empty list.
+ |  The argument must be an iterable if specified.
+ |
+ |  Methods defined here:
+ |
+ |  __add__(self, value, /)
+….
+….
+
+# How to add new elements to existing list?
+#=========================================
+# Listname.append(value)
+# Listname.insert(index,value)
+L=[]
+len(L)
+0
+type(L)
+<class 'list'>
+L.append(10)
+L.append(20)
+L.append(True)
+L.append("data")
+L
+[10, 20, True, 'data']
+len(L)
+4
+
+L.insert(1, '/etc/passwd')
+L
+[10, '/etc/passwd', 20, True, 'data']
+
+#How to delete a single element from List
+#=========================================
+# Listname.pop(index)-> removed element    VS del(Listname[index])-> None
+
+var=10
+# var    | 10| 0x1234
+print(var)
+10
+del(var)  # deallocates the memory
+print(var)
+Traceback (most recent call last):
+  File "<pyshell#125>", line 1, in <module>
+    print(var)
+NameError: name 'var' is not defined. Did you mean: 'vars'?
+L
+[10, '/etc/passwd', 20, True, 'data']
+L.pop(1)    # Listname.pop(index)
+'/etc/passwd'
+L
+[10, 20, True, 'data']
+
+del(L[2])  #del(Listname[index])-> None
+L
+[10, 20, 'data']
+help(None)
+Help on NoneType object:
+
+class NoneType(object)
+ |  The type of the None singleton.
+ |
+ |  Methods defined here:
+ |
+ |  __bool__(self, /)
+ |      True if self else False
+ |
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |
+ |  __ge__(self, value, /)
+ |      Return self>=value.
+ ….
+….
+
+L.pop(0)
+10
+L
+[20, 'data']
+L.pop()     # removes last element
+'data'
+L
+[20]
+L.append(1.34)
+L
+[20, 1.34]
+L.append(True)
+L
+[20, 1.34, True]
+
+#How to get index of an element
+#==============================
+L.index(1.34)   # Listname.index(value)===> index
+1
+L.index(20)
+0
+L.index(True)
+2
+
+# List- collection of different type elemnts- mutable - index based - allows duplicates
+
+L.append(20)
+L.append(1.34)
+L.append(True)
+L
+[20, 1.34, True, 20, 1.34, True]
+s="welcome"
+L.count(20)
+2
+L.count(1.34)
+2
+L.count(True)
+2
+help(L.count)
+Help on built-in function count:
+
+count(value, /) method of builtins.list instance
+    Return number of occurrences of value.
+
+help("".count)
+Help on built-in function count:
+
+count(sub[, start[, end]], /) method of builtins.str instance
+    Return the number of non-overlapping occurrences of substring sub in string S[start:end].
+
+    Optional arguments start and end are interpreted as in slice notation.
+
+s
+'welcome'
+s.count("e")
+2
+
+L
+[20, 1.34, True, 20, 1.34, True]
+L.count(20)
+2
+
+"welcome".count("x")
+0
+L.count(False)
+0
+
+# L.append()  L.insert()    L.pop()  del()  L.index()   L.count()
+
+
+"e" in "welcome"  # memeber in collection  -> bool
+True
+"E" in "welcome"
+False
+'co' in "welcome"
+True
+20 in L
+True
+L
+[20, 1.34, True, 20, 1.34, True]
+
+"sales" == "sales"
+True
+"sales" == "sales,"
+False
+"co" in "co"
+True
+"co" in "come"
+True
+"sales" in "101,Arun,sales,pune,21322"
+True
+if "sales" in "101,Arun,sales,pune,1222":
+    print("Yes-Matched")
+else:
+    print("Sorry- Pattern Not Matched")
+
+    
+Yes-Matched
+"x" not in "welcome"
+True
+
+if "data" in L:
+    print(L.index("data"))
+
+    
+L
+[20, 1.34, True, 20, 1.34, True]
+
+if 20 in L:
+    print(L.index(20))
+
+    
+0
+
+L
+[20, 1.34, True, 20, 1.34, True]
+del(L[1])
+L
+[20, True, 20, 1.34, True]
+del(L)
+L
+Traceback (most recent call last):
+  File "<pyshell#202>", line 1, in <module>
+    L
+NameError: name 'L' is not defined
+var=10
+var
+10
+del(var)
+var
+Traceback (most recent call last):
+  File "<pyshell#206>", line 1, in <module>
+    var
+NameError: name 'var' is not defined. Did you mean: 'vars'?
+
+
+s="root:x:bin:bash"
+
+type(s)
+<class 'str'>
+
+# single (str)---> multiple str (list)
+
+# inputString.split(delimetr)-> outputlist
+
+s
+'root:x:bin:bash'
+s.spilt()
+Traceback (most recent call last):
+  File "<pyshell#10>", line 1, in <module>
+    s.spilt()
+AttributeError: 'str' object has no attribute 'spilt'. Did you mean: 'split'?
+s.split()
+['root:x:bin:bash']
+s.split(":")
+['root', 'x', 'bin', 'bash']
+L=s.split(":")
+len(L)
+4
+# str-> list
+
+
+
+# list---> str
+
+#  "".join(inputlist)--> outputstring
+
+"".join(L)
+'rootxbinbash'
+"-".join(L)
+'root-x-bin-bash'
+":".join(L)
+'root:x:bin:bash'
+"".join([10,20,1.34,"data",True])
+Traceback (most recent call last):
+  File "<pyshell#26>", line 1, in <module>
+    "".join([10,20,1.34,"data",True])
+TypeError: sequence item 0: expected str instance, int found
+help("".join)
+Help on built-in function join:
+
+join(iterable, /) method of builtins.str instance
+    Concatenate any number of strings.
+
+    The string whose method is called is inserted in between each given string.
+    The result is returned as a new string.
+
+    Example: '.'.join(['ab', 'pq', 'rs']) -> 'ab.pq.rs'
+
+for var in L:
+    print(var)
+
+    
+root
+x
+bin
+bash
+"\n".join(L)
+'root\nx\nbin\nbash'
+
+L
+['root', 'x', 'bin', 'bash']
+L=[10,20,1.34,"data"]
+L1=[]
+for var in L:
+    L1.append(str(var))
+
+    
+L1
+['10', '20', '1.34', 'data']
+"-".join(L1)
+'10-20-1.34-data'
+
+s1='101,raj,sales,pune,19999'
+
+s1.split(",")
+['101', 'raj', 'sales', 'pune', '19999']
+name=L[0]
+name=L[1]
+dept=L[2]
+name
+20
+dept
+1.34
+# multiple initialization
+#---------------------------
+# variable = value----> single
+#
+# var1, var2, var.... varn = value1, value2...valueN
+
+v1,v2,v3,v4,v5= 10,2.35,"data",True,20
+v1
+10
+v2
+2.35
+v3
+'data'
+v4
+True
+v5
+20
+L1,L2=[],[]
+L1
+[]
+L2
+[]
+
+L
+[10, 20, 1.34, 'data']
+s1
+'101,raj,sales,pune,19999'
+L=s1.split(",")
+L
+['101', 'raj', 'sales', 'pune', '19999']
+empid , name, dept, city, cost =L
+empid
+'101'
+name
+'raj'
+dept
+'sales'
+city
+'pune'
+cost
+'19999'
+
+eid,ename,ecost,others= 101,"raj", "prod",[]
+eid
+101
+ename
+'raj'
+ecost
+'prod'
+others
+[]
+others.append('city')
+others.append('IP')
+others.append('address')
+
+others
+['city', 'IP', 'address']
+
+v1,v2 = 10,20,30
+Traceback (most recent call last):
+  File "<pyshell#89>", line 1, in <module>
+    v1,v2 = 10,20,30
+ValueError: too many values to unpack (expected 2)
+
+v1,v2,v3=10,20
+Traceback (most recent call last):
+  File "<pyshell#91>", line 1, in <module>
+    v1,v2,v3=10,20
+ValueError: not enough values to unpack (expected 3, got 2)
+
+
+
+==============================================================================================================
+
+Tuple
+=====
+
+- like a list - tuple different type of items ; index based ; slicing ; membership opr
+
+
+list- mutable      		  vs        Tuple- immutable
+|
+add;modify;delete in nth index		we cant add/ delete nth index value/ modify existing 
+
+
+tuple - fixed record
+      - readonly
+
+
+ tuple ->   ()        vs  List--> []
+
+tuple-> default python type to hold multiple values
+
+===============================================================================================================
+
+type([])
+<class 'list'>
+type(())
+<class 'tuple'>
+
+L=[10,3.4,"data",True,None]
+
+T=(10,3.4,"data",True,None)
+
+type(L)
+<class 'list'>
+type(T)
+<class 'tuple'>
+s='data'
+type(s)
+<class 'str'>
+s="data"
+type(s)
+<class 'str'>
+s[0]
+'d'
+L[0]
+10
+T
+(10, 3.4, 'data', True, None)
+T[0]
+10
+L1=[]
+T1=()
+s1=''
+s2=""
+type(L1)
+<class 'list'>
+type(T1)
+<class 'tuple'>
+type(s1)
+<class 'str'>
+type(s2)
+<class 'str'>
+# syntax-> collectionname[Index]   listname[index]--> elmt in index   tuplename[index]--> elmt in index
+
+T[1]
+3.4
+T[-1]
+T[-2]
+True
+T[-3]
+'data'
+T
+(10, 3.4, 'data', True, None)
+T[0]
+10
+T[-5]
+10
+T[1:]
+(3.4, 'data', True, None)
+T[-3:]
+('data', True, None)
+
+for var in T:
+    print(var)
+
+    
+10
+3.4
+data
+True
+None
+
+10 in T
+True
+len(T)
+5
+T
+(10, 3.4, 'data', True, None)
+L[1]=T[1]
+L
+[10, 3.4, 'data', True, None]
+L1=[0,1,2,3,4]
+L1[1]=T[1]
+L1
+[0, 3.4, 2, 3, 4]
+T[1]=L1[1]
+Traceback (most recent call last):
+  File "<pyshell#50>", line 1, in <module>
+    T[1]=L1[1]
+TypeError: 'tuple' object does not support item assignment
+T=(1,2,3,4,12,34,1,2,3,4)
+T
+(1, 2, 3, 4, 12, 34, 1, 2, 3, 4)
+v1=10
+type(v1)
+<class 'int'>
+v1=10,
+type(v1)
+<class 'tuple'>
+v2=1,2,3,4,5
+type(v2)
+<class 'tuple'>
+# import module
+#module.function()-> ()
+
+T=('/etc/passwd','/etc/pam.d', '/etc/shadow', '/etc/hosts')
+
+# remove '/etc/shadow'
+#add 'D:\\myconfig"
+#modify '/etc/hosts' -> '/stc/sysconfig'
+
+# we can typecast tuple to a list
+
+list(T)
+['/etc/passwd', '/etc/pam.d', '/etc/shadow', '/etc/hosts']
+L=list(T)
+type(L)
+<class 'list'>
+
+L.pop(2)
+'/etc/shadow'
+L
+['/etc/passwd', '/etc/pam.d', '/etc/hosts']
+L.append("D:\\myconfig")
+L
+['/etc/passwd', '/etc/pam.d', '/etc/hosts', 'D:\\myconfig']
+L[-1]='etc/sysconfig'
+L
+['/etc/passwd', '/etc/pam.d', '/etc/hosts', 'etc/sysconfig']
+T=tuple(L)
+T
+('/etc/passwd', '/etc/pam.d', '/etc/hosts', 'etc/sysconfig')
+
+================================================================================================================
+Task
+----
+Given Tuple:
+Fnames=("p1.log","test.log","p2.java","test.cpp","index.html")
+
+Expected  output
+----------------
+1. p1.log
+2. test.log
+3. p2.java
+4. test.cpp
+5. index.html
+
+Total no. of files: 5
+-------------------------------------------------------------------------------------------------
+
+File Handling - str, list
+=============
+
+
+STDIN
+ Keyboard -----------------------------> Script ------------------------> STDOUT   (Monitor)
+           input()                                  print()
+                                           |
+                                           |
+                                        <File>
+
+
+mode (operation)
+----
+ read (r)  - default mode
+ write (w) 
+ append(a) 
+
+open("filepath",mode)============> fileobject | file handler---> fileobject.read() 
+
+
+python …     User layer
+----------------------
+
+kernel |     [] 0x1234
+----------------------
+Hardware
+<STORAGE>
+
+fileobject.close()
+
+# reading a file- entire file content as a single str
+
+fobj=open("filename", "r")
+s=fobj.read()  # single str
+fobj.close()
+
+# reading a file- entire file content as a List of file lines
+
+fobj=open("filename", "r")
+s=fobj.readLines()  # List
+fobj.close()
+
+# read single line at a time from a file
+fobj=open("filename", "r")
+fobj.readline()
+fobj.close()
+====================================================================================================
+
+Fnames=("p1.log","test.log","p2.java","test.cpp","index.html")
+
+for var in Fnames:
+    print(var)
+
+    
+p1.log
+test.log
+p2.java
+test.cpp
+index.html
+
+c=0
+for var in Fnames:
+    print("{}. {}".format(c,var))
+    c=c+1
+
+    
+0. p1.log
+1. test.log
+2. p2.java
+3. test.cpp
+4. index.html
+
+c=1
+for var in Fnames:
+    print("{}. {}".format(c,var))
+    c=c+1
+else:
+    print("Total no. of files :{}".format(c))
+    print("Total no. of files :{}".format(len(Fnames)))
+
+    
+1. p1.log
+2. test.log
+3. p2.java
+4. test.cpp
+5. index.html
+Total no. of files :6
+Total no. of files :5
+
+c=0
+for var in Fnames:
+    c=c+1
+    print("{}. {}".format(c,var))
+   
+else:
+    print("Total no. of files :{}".format(c))
+    print("Total no. of files :{}".format(len(Fnames)))
+
+1. p1.log
+2. test.log
+3. p2.java
+4. test.cpp
+5. index.html
+Total no. of files :5
+Total no. of files :5
+
+fobj=open("C://Users//Lenovo//Desktop//emp.csv","r")
+fobj
+<_io.TextIOWrapper name='C://Users//Lenovo//Desktop//emp.csv' mode='r' encoding='cp1252'>
+fobj.read()
+'101,Arun,sales,pune,23321\n102,Vishnu,sales,hyderabad,3132\n103,Vijay,prod,Pune,23122\n104,Raghav,Hr,pune,321332\n105,sam,Hr,bglore,83632\n'
+
+fobj.read()
+''
+fobj.close()
+fobj=open("C://Users//Lenovo//Desktop//emp.csv","r")
+fobj.readlines()
+['101,Arun,sales,pune,23321\n', '102,Vishnu,sales,hyderabad,3132\n', '103,Vijay,prod,Pune,23122\n', '104,Raghav,Hr,pune,321332\n', '105,sam,Hr,bglore,83632\n']
+fobj.close()
+fobj=open("C://Users//Lenovo//Desktop//emp.csv","r")
+fobj.readline()
+'101,Arun,sales,pune,23321\n'
+fobj.readline()
+'102,Vishnu,sales,hyderabad,3132\n'
+fobj.readline()
+'103,Vijay,prod,Pune,23122\n'
+fobj.readline()
+'104,Raghav,Hr,pune,321332\n'
+fobj.readline()
+'105,sam,Hr,bglore,83632\n'
+fobj.readline()
+''
+
+====================================================================================================
+
+
+Task
+====
+create a python script
+
+step 1: read the file content emp.csv as a list of individual line content  ( use:- fobj.readlines())
+
+each elmt in list : "101,arun,sales,pune,2313\n"
+
+step 2: apply str.strip() method on each line content
+ex: '101,arun,sales,pune,2313'
+
+step 3: apply str.split() method , create variables (eid,ename,ecity,ecost)
+step 4: display as follows
+
+Emp name : Arun 	Working dept: sales
+Emp name : Vishnu	Working dept: sales
+Emp name : Vijay 	Working dept: prod
+Emp name : Raghav 	Working dept: Hr
+Emp name : Sam	 	Working dept: Hr
+------------------------------------------------
+Sum of Emp cost         :  18000
+-----------------------------------------------
+==============================================================================================
+
+range()--> rangeType value
+
+range(5)---> range object --> 1,2,3,4,5
+
+range(2,5)--> range(n,m)---> starts from n to (m-1)
+
+range(2,15,2) -> range(n,m,step)  --> starts from n to (m-1) with step value of 2
+
+=============================================================================================
+range(5)
+range(0, 5)
+
+for i in range(5):
+    print(i)
+
+    
+0
+1
+2
+3
+4
+for i in range(2,5):
+    print(i)
+
+    
+2
+3
+4
+for i in range(2,15,2):
+    print(i)
+
+    
+2
+4
+6
+8
+10
+12
+14
+
+---------------------------------------------------------------------------------------------------------
+python_Activity_List_Tuple_Filehandling.pdf
+--------------------------------------------
+1. 
+import os
+
+for var in range(5)          # 0,1,2,3,4
+	os.system("uptime")
+	os.system("sleep 2")
+
+---------------------------------------------------------------------------------------------------------
+
+4.
+import os 
+L=[]      # empty List
+for i in range(5):
+    var=input("Enter the filename")
+    L.append(var)
+
+for var in L:
+    print(var)
+
+for var in L:
+    os.system("ls -l "+var)
+--------------------------------------------------------------------------------------------------------
+
+
+File Handling
+--------------
+1.Read a file content
+----------------------
+FH=open(filename,"r")
+or
+FH=open(filename)
+-----------------------------------------
+FH=open(filename)
+s=FH.read()  #single str
+FH.close()
+
+(or)
+FH=open(filename)
+L=FH.readlines()        # list of file lines
+FH.close()
+
+(or)
+FH=open(filename)
+FH.readline()
+FH.readline()
+FH.readline()
+FH.close()
+
+--------------------------------------------------------
+with open(filename,mode) as FH:
+	L=FH.readlines()
+	for var in L:
+		print(var.strip())
+print("Out of With handler- resource auto closure")
+--------------------------------------------------------
+
+
+2. write data to file
+----------------------
+
+WH=open(filename,"w")
+               |
+               mandatory
+WH.write(singlestr)
+
+WH.close()
+
+(or)
+
+with open(filename,"w") as WH:
+	WH.write(singlestr)
+	…
+
+ append mode
+----------------
+
+WH=open(filename,"a")
+WH.write(singlestr)
+WH.close()
+-------------------
+file content
+-------------
+original content
++
+New Content
+--------------
+
+conclusion
+-----------
+                 input()                               print()
+keyboard---------------------------------Script-------------------------------Monitor
+                                           |
+                                           |
+                                        File
+
+
+1. read a  data from <FILE> --> python ---> display to Monitor
+
+fh=open("filename")
+s=fh.read()
+print(s)
+fh.close()
+
+(or)
+fh=open("filename")
+L=fh.readlines()
+for var in L:	
+	print(var)
+fh.close()
+
+(or)
+fh=open("filename")
+s=fh.readline()
+print(s)
+fh.close()
+
+-------------------------------------------------------------------------------------------------
+2. Python --------->  create a NEWFILE -> write data to File
+
+WH=open("inputfile","w")
+WH.write("Singlestr\n")
+…
+WH.close()
+
+(or)
+with open("inputfile","w") as WH:
+	WH.write("Singlestr\n")
+	..
+	WH.write("Singlestr\n")
+
+
+-------------------------------------------------------------------------------------------------
+
+3. reading a data from <ONEFILE>----> script-----> create a newfile --> write to data <ANOTHERFILE>
+
+FH=open("inputfile")
+WH=open("resultfile","w")
+s=FH.read()
+WH.write(s)
+WH.close()
+FH.close()
+
+(or)
+
+with open("inputfile") as FH:
+	with open("resultfile","w") as WH:
+		s=FH.read() # L=FH.readlines()
+		WH.write(s)   
+
+-------------------------------------------------------------------------------------------------
+
+with open("inputfile","w") as WH:          ===> write
+	WH.write("Singlestr\n")
+	..
+	WH.write("Singlestr\n")
+
+with open("inputfile","a") as WH:        ====> append
+	WH.write("Singlestr\n")
+	..
+	WH.write("Singlestr\n")
+
+with open("inputfile") as WH:            ===> read
+	s=WH.read()
+	print(s)
+
+======================================================================================================
+
+dict
+====
+
+int float str bool None
+10   1.34  "data" True  None
+
+[10  , 1.34 , "data", True , None] // index
+ 0      1        2      3    4 
+-5      -4      -3     -2    -1
+
+
+(10  , 1.34 , "data", True , None) // index
+ 0      1        2      3    4 
+-5      -4      -3     -2    -1
+
+
+List/Tuple - collection of ordered elmts(different types) - data - index based ; index-int
+
+dict - collection of unordered elmts - data// {"key" :"value"}  - key based ; key- str
+
+dict- key based - unique key
+    - value - can be duplicated
+
+key-> immutable structure
+   -> int, float, str, bool, tuple  // key
+
+emp={"eid" : 123, "ename" :"Arun", "edept" : "sales", "ecity" : "pune"}
+     -----------  --------------   -----------------   ---------------
+
+col1		|		col2
+-------------------------------------
+key		|		value
+-------------------------------------
+eid		|		123
+-------------------------------------
+ename		|		Arun
+-------------------------------------
+edept		|		sales
+-------------------------------------
+ecity		|		pune
+
+
+metadata
+webparsing--> header info 
+json object
+
+
+<a href="python.org">
+{"href" : "python.org"}
+
+=========================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
